@@ -57,6 +57,6 @@ echo "<VirtualHost *:80>
 </VirtualHost>" > /etc/apache2/sites-enabled/$WWW.conf
 
 #adding site to hosts file
-echo "127.0.0.1	www.test.com" > /etc/hosts
+echo "127.0.0.1	$WWW" > /etc/hosts
 
 
