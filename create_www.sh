@@ -48,7 +48,7 @@ echo "
 touch /etc/apache2/sites-enabled/$WWW.conf
 echo "<VirtualHost *:80>
         ServerAdmin webmaster@$WWW
-		ServerName $WWW
+        ServerName $WWW
         ServerAlias www.$WWW
         DocumentRoot /var/www/$WWW
         ErrorLog /var/log/apache2/$WWW'_error.log
