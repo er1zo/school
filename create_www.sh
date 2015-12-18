@@ -51,12 +51,12 @@ echo "<VirtualHost *:80>
 		ServerName $WWW
         ServerAlias www.$WWW
         DocumentRoot /var/www/$WWW
-        ErrorLog \${APACHE_LOG_DIR}/$WWW\_error.log
-        CustomLog \${APACHE_LOG_DIR}/$WWW\_access.log combined
+        ErrorLog /var/log/apache2/$WWW'_error.log
+        CustomLog /var/log/apache2/$WWW'_access.log combined
 
 </VirtualHost>" > /etc/apache2/sites-enabled/$WWW.conf
 
 #adding site to hosts file
-echo "127.0.0.1	www.test.com"
+echo "127.0.0.1	www.test.com" > /etc/hosts
 
 
