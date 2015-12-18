@@ -14,7 +14,7 @@ if [ $# -eq 1 ]
 then
 	WWW=$1
 else
-	echo "usage: WWW"
+	echo "usage: example.com"
 fi
 
 #checking if samba exists on server
@@ -45,11 +45,18 @@ echo "
 
 
 #creating conffile and conf for new www
+touch /etc/apache2/sites-enabled/$WWW.conf
 echo "<VirtualHost *:80>
-        ServerAdmin webmaster@localhost
-		ServerAlias $WWW
+        ServerAdmin webmaster@$WWW
+		ServerName $WWW
+        ServerAlias www.$WWW
         DocumentRoot /var/www/$WWW
-        ErrorLog ${APACHE_LOG_DIR}/$WWW\_error.log
-        CustomLog ${APACHE_LOG_DIR}/$WWW\_access.log combined
+        ErrorLog \${APACHE_LOG_DIR}/$WWW\_error.log
+        CustomLog \${APACHE_LOG_DIR}/$WWW\_access.log combined
 
-</VirtualHost>" > /etc/apache/sites-enabled/$WWW.conf
+</VirtualHost>" > /etc/apache2/sites-enabled/$WWW.conf
+
+#adding site to hosts file
+echo "127.0.0.1	www.test.com"
+
+
