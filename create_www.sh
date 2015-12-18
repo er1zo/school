@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # if we have enough rights
-if [ $UID -ne 0]
+if [ $UID -ne 0 ]
 then 
 	echo "you don't have enough permissions"
 	exit 1
@@ -10,7 +10,7 @@ fi
 
 #how namy vars we have
 # 2 for dir&group, 3 for same and if we share it
-if [ $# -eq 1]
+if [ $# -eq 1 ]
 then
 	WWW=$1
 else
