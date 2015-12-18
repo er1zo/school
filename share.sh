@@ -10,7 +10,7 @@
 # 9. restart samba
 
 # if we have enough rights
-if [ $UID -ne 0]
+if [ $UID -ne 0 ]
 then 
 	echo "you don't have enough permissions"
 	exit 1
@@ -19,12 +19,13 @@ fi
 
 #how namy vars we have
 # 2 for dir&group, 3 for same and if we share it
-if [ $# -eq 2]
+if [ $# -eq 2 ]
 then
 	DIR=$1
 	GROUP=$2
+	SHARE=$DIR
 else
-	if [ $# -eq 3]
+	if [ $# -eq 3 ]
 	then
 		DIR=$1
 		GROUP=$2
@@ -47,7 +48,7 @@ test -d $DIR && echo $DIR exists || mkdir $DIR
 getent group $GROUP && echo $GROUP exists || groupadd $GROUP	
 
 #add DIR to samba
-echo "[$DIR]
+echo "[$SHARE]
  comment="directory for $GROUP" 
  path=$DIR
  writable=yes
