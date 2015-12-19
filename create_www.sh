@@ -58,5 +58,5 @@ echo "<VirtualHost *:80>
 
 #adding site to hosts file
 echo "127.0.0.1	$WWW" > /etc/hosts
-
+service apache2 restart
 
