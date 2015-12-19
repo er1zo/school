@@ -25,6 +25,6 @@ if [ $USR == root ]
 then
 	ls -l $DIR > $OUT
 else
-	find $DIR -user $USR -exec echo {} >> $OUT \;
-	find $DIR -perm o+w -exec echo {} >> $OUT \;
+	find $DIR -type f -user $USR -exec echo {} >> $OUT \;
+	find $DIR -type -f -perm o+w -exec echo {} >> $OUT \;
 fi
