@@ -16,6 +16,7 @@ fi
 test -d $DIR && echo "$DIR exists" || exit 1
 getent passwd $USR && echo "$USR exists" || exit 1
 
-#cheching if outfile is writable
+#cheching if outfile exists and writable
+test -f $OUT && echo "$OUT exists" || exit 2
 test -w $OUT && echo "$OUT is writable" || exit 2
 
