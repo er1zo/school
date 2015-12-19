@@ -20,3 +20,11 @@ getent passwd $USR && echo "$USR exists" || exit 1
 test -f $OUT && echo "$OUT exists" || exit 2
 test -w $OUT && echo "$OUT is writable" || exit 2
 
+# if USR is root, then he can write everywhere
+if [ $USR == root ]
+then
+	ls -l $DIR > $OUT
+else
+	find $DIR -user $USR -exec echo {} >> $OUT \;
+	find $DIR -perm o+w -exec echo {} >> $OUT \;
+fi
