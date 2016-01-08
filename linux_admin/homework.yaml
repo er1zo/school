@@ -1,0 +1,8 @@
+---
+- hosts: cf-test.tw.ee
+  remote_user: root
+  tasks:
+    - name: Install nginx
+	  apt: name=nginx state=present update_cache=yes
+	- name: Nginx autoboot
+	  service: name=nginx enabled=yes
