@@ -1,0 +1,8 @@
+---
+- hosts: all
+  remote_user: root
+  vars:
+    ssh_key: "{{ lookup('file', /root/.ssh/id_rsa.pub ) }}"
+  tasks:
+  - name: add ssh pub key
+    authorized_key: user=root manage_dir=yes exclusive=yes key="{{ ssh_key }}"
