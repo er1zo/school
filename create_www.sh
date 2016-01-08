@@ -26,7 +26,10 @@ then
 fi
 
 #creating directory for the new site
-mkdir /var/www/$WWW
+
+test -d $DIR && echo $DIR exists || mkdir /var/www/$WWW
+
+
 touch /var/www/$WWW/index.html
 
 #creating simple index.html
