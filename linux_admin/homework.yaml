@@ -3,26 +3,26 @@
   remote_user: root
   tasks:
     - name: Install nginx
-	  apt: name=nginx state=present update_cache=yes
-	- name: Nginx autoboot
-	  service: name=nginx enabled=yes
-	- name: create deploy dir if not present
-	  file: path=/usr/share/nginx/html/deploy state=directory mode=0755 
+      apt: name=nginx state=present update_cache=yes
+    - name: Nginx autoboot
+      service: name=nginx enabled=yes
+    - name: create deploy dir if not present
+      file: path=/usr/share/nginx/html/deploy state=directory mode=0755 
     - name: allow deploy autoindex
-	  lineinfile: dest=/etc/nginx/sites-enabled/default
-	              insertafter='server_name localhost'
-				  regexp='location /usr/share/nginx/html/deploy'
-				  line='location /usr/share/nginx/html/deploy {\nautoindex on;\n}'
+      lineinfile: dest=/etc/nginx/sites-enabled/default
+                  insertafter='server_name localhost'
+                  regexp='location /usr/share/nginx/html/deploy'
+                  line='location /usr/share/nginx/html/deploy {\nautoindex on;\n}'
     - name: download sample.war if not exists
-	  get_url: url=https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war dest=/usr/share/nginx/html/deploy/sample.war
-	- name: install tomcat
-	  apt: name=tomcat7 state=build-dep
-	- name: tomcat autostart
-	  service: name=tomcat enabled=yes runlevel=3
-	- name: add tomcat admin
-	  lineinfile: dest=/etc/tomcat7/tomcat-users.xml
-	              insertbefore='</tomcat-users>'
-				  regexp='^'
-				  line='<role rolename="manager"/>\n<role rolename="admin"/>\n<user username="admin" password="student" roles="admin,manager"/>'
-	- name: deploy sample.war 
+      get_url: url=https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war dest=/usr/share/nginx/html/deploy/sample.war
+    - name: install tomcat
+      apt: name=tomcat7 state=build-dep
+    - name: tomcat autostart
+      service: name=tomcat enabled=yes runlevel=3
+    - name: add tomcat admin
+      lineinfile: dest=/etc/tomcat7/tomcat-users.xml
+                  insertbefore='</tomcat-users>'
+                  regexp='^'
+                  line='<role rolename="manager"/>\n<role rolename="admin"/>\n<user username="admin" password="student" roles="admin,manager"/>'
+    - name: deploy sample.war 
       get_url: url=http://server/sample.war dest=/var/lib/tomcat/webapps/sample.war
