@@ -14,7 +14,7 @@
                   regexp='location /usr/share/nginx/html/deploy'
                   line='location /usr/share/nginx/html/deploy {\nautoindex on;\n}'
     - name: download sample.war if not exists
-      get_url: url=https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war dest=/usr/share/nginx/html/deploy/sample.war
+      get_url: url=https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war dest=/usr/share/nginx/html/deploy/sample.war validate_certs
     - name: install tomcat
       apt: name=tomcat7 state=build-dep
     - name: tomcat autostart
