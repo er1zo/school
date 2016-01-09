@@ -10,13 +10,13 @@
       file: path=/usr/share/nginx/html/deploy state=directory mode=0755 
     - name: allow deploy autoindex
       lineinfile: dest=/etc/nginx/sites-enabled/default
-                  insertafter='server_name localhost'
+                  insertbefore='location / {'
                   regexp='location /usr/share/nginx/html/deploy'
                   line='location /usr/share/nginx/html/deploy {\nautoindex on;\n}'
     - name: download sample.war if not exists
-      get_url: url=https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war dest=/usr/share/nginx/html/deploy/sample.war validate_certs
+      get_url: url=https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war dest=/usr/share/nginx/html/deploy/sample.war validate_certs=no
     - name: install tomcat
-      apt: name=tomcat7 state=build-dep
+      apt: name=tomcat7 state=present
     - name: tomcat autostart
       service: name=tomcat enabled=yes runlevel=3
     - name: add tomcat admin
@@ -25,4 +25,4 @@
                   regexp='^'
                   line='<role rolename="manager"/>\n<role rolename="admin"/>\n<user username="admin" password="student" roles="admin,manager"/>'
     - name: deploy sample.war 
-      get_url: url=http://server/sample.war dest=/var/lib/tomcat/webapps/sample.war
+      get_url: url=http://server/deploy/sample.war dest=/var/lib/tomcat7/webapps/sample.war
