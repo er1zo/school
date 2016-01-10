@@ -11,23 +11,23 @@ fi
 test -r $RFILE && echo "$RFILE readable" || exit 1
 test -w $WFILE && echo "$WFILE writable" || exit 2
 
-cat $SEARCH > $WFILE
+echo "$SEARCH" > $WFILE
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
     if [ -f $line ]; then
 		grep -q $SEARCH $line
 		if [ $? -eq 0 ]; then
-			cat "$line, OLEMAS" >> $WFILE
+			echo "$line, OLEMAS" >> $WFILE
 		else
-			cat "$line, POLE OLEMAS" >> $WFILE
+			echo "$line, POLE OLEMAS" >> $WFILE
 		fi
 
-	elif [ -d $line]; then
+	elif [ -d $line ]; then
 		find $line -name '*$SEARCH*'
 		if [ $? -eq 0 ]; then
-			cat "$line, OLEMAS" >> $WFILE
+			echo "$line, OLEMAS" >> $WFILE
 		else
-			cat "$line, POLE OLEMAS" >> $WFILE
+			echo "$line, POLE OLEMAS" >> $WFILE
 		fi
 	fi
 done < "$RFILE"
