@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $# -eq 3 ] then 
+if [ $# -eq 3 ]; then 
 	RFILE=$1
 	WFILE=$2
 	SEARCH=$3
@@ -14,17 +14,17 @@ test -w $WFILE && echo "$WFILE writable" || exit 2
 cat $SEARCH > $WFILE
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
-    if [ -f $line ] then
+    if [ -f $line ]; then
 		grep -q $SEARCH $line
-		if [ $? -eq 0 ] then
+		if [ $? -eq 0 ]; then
 			cat "$line, OLEMAS" >> $WFILE
 		else
 			cat "$line, POLE OLEMAS" >> $WFILE
 		fi
 
-	elif [ -d $ line] then
+	elif [ -d $line]; then
 		find $line -name '*$SEARCH*'
-		if [ $? -eq 0 ] then
+		if [ $? -eq 0 ]; then
 			cat "$line, OLEMAS" >> $WFILE
 		else
 			cat "$line, POLE OLEMAS" >> $WFILE
