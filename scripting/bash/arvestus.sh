@@ -1,6 +1,5 @@
 #!/bin/bash
-[ if $# eq -3 ]
-then 
+if [ $# -eq 3 ] then 
 	RFILE=$1
 	WFILE=$2
 	SEARCH=$3
@@ -9,8 +8,8 @@ else
 	exit 3
 fi
 
-test -r $RFILE && "$RFILE readable" || exit 1
-test -w $WFILE && "$WFILE writable" || exit 2
+test -r $RFILE && echo "$RFILE readable" || exit 1
+test -w $WFILE && echo "$WFILE writable" || exit 2
 
 cat $SEARCH > $WFILE
 
