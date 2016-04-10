@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><title>Side labor 4 aruanne</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head><body>
+<h1>Side labor 4 Traadita kohtvõrk WLAN aruanne</h1>
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tbody><tr>
+<td>Töö tegijate nimed:</td>
+</tr>
+<tr>
+<td>Neeme Tingas</td>
+</tr>
+<tr>
+<td>Aleksei Volkov</td>
+</tr>
+<tr>
+<td>Töö tegemise kuupäev: Sun Apr 10 09:13:41 2016</td>
+</tr>
+</tbody></table>
+
+<h2>1. WLAN tugijaama seadistamine</h2>
+<h3>WLAN tugijaama seadistamise IP osa</h3>
+<table border="1">
+<tbody><tr>
+<td>Variant nr</td>
+<td>Võrgu aadress</td>
+<td>Maski võrguosa bittide arv</td>
+<td>Võrgus seadmetele antavate aadresside max arv</td>
+<td>võrgumask kümnendkujul</td>
+<td>Esimene kasutatav aadress - <br>tugijaama IP aadress</td>
+<td>Teine kasutatav aadress - <br>esimene DHCPga jagatav aadress</td>
+<td>Viimane kasutatav aadress - <br>viimane DHCPga jagatav aadress</td>
+<td>Aadressruumi viimane aadress, levisaade (<i>broadcast</i>)</td>
+</tr>
+<tr><td>3</td><td>172.21.82.96</td><td>27</td><td>30</td><td>255.255.255.224</td><td>172.21.82.97</td><td>172.21.82.98</td><td>172.21.82.126 </td><td>172.21.82.127</td></tr></tbody></table><p>
+</p><h3>WLAN tugijaama seadistamise WLAN osa</h3>
+<table border="1" cellpadding="4" cellspacing="0">
+<tbody><tr>
+<td><small>2,4 GHz võrgu nimi</small><br>
+L4:A2_2.4</td>
+<td><small>2,4 GHz kanali number</small><br>
+6</td>
+</tr>
+<tr>
+<td><small>5 GHz võrgu nimi</small><br>
+L4:A2_5</td>
+<td><small>5 GHz kanali number</small><br>
+48 (auto)</td>
+</tr>
+</tbody></table>
+
+
+<h3>Labori sisevõrgu skeem</h3>
+<img src="" alt="LISA SIIA LABORI SISEVÕRGU SKEEM!">
+<h2>2. WLAN spektri mõõtmine</h2>
+<table border="1" cellpadding="4" cellspacing="0">
+<tbody><tr>
+<td>katse</td>
+<td>WLAN kanalid</td>
+<td>Mõõdetud spektri alumine sagedus</td>
+<td>Mõõdetud spektri ülemine sagedus</td>
+<td>Mõõdetud  spektri laius</td>
+</tr>
+<tr><td>1</td>
+<td>6 (2,437 GHz)</td>
+<td>2,427</td>
+<td>2,447</td>
+<td>20 MHz</td>
+</tr><tr>
+<td colspan="7"><img src="" alt="LISA SIIA KATSE 1 SPEKTRIPILT!"></td></tr>
+</tbody></table>
+<p>
+</p><table border="1" cellpadding="4" cellspacing="0">
+<tbody><tr>
+<td>katse</td>
+<td>WLAN kanalid</td>
+<td>Mõõdetud spektri alumine sagedus</td>
+<td>Mõõdetud spektri ülemine sagedus</td>
+<td>Mõõdetud  spektri laius</td>
+</tr>
+<tr><td>2</td>
+<td>48 (5,24 GHz)</td>
+<td>5,22</td>
+<td>5,262</td>
+<td>42</td>
+</tr>
+<tr>
+<td colspan="7"><img src="" alt="LISA SIIA KATSE 2 SPEKTRIPILT!"></td></tr>
+</tbody></table>
+<h3>Edastuskiiruse arvutused mõlemas WLAN võrgus.</h3>
+LISA SIIA EDASTUSKIIRUSTE ARVUTUSED MÕLEMA VÕRGU KOHTA!
+<h2>3. WLAN võrgu uurimine</h2>
+<h3>Netsh</h3>
+<table border="1" cellpadding="4" cellspacing="0">
+<tbody><tr>
+<td colspan="2"><small>2,4 GHz võrk</small> L4:A2_2.4</td></tr>
+<tr><td colspan="2">
+<pre>KOPEERI ESIMESE KÄSU VÄLJUNDFAILI SISU SIIA!
+</pre>
+</td></tr>
+<tr>
+<td>Mis tüüpi WLAN võrguga on arvuti ühendatud?</td>
+<td>802.11g</td></tr>
+<tr><td>Milline on lubatud laadimiskiirus üles ja alla?</td>
+<td>54 Mbps</td>
+</tr><tr><td colspan="2"><small>5 GHz võrk</small> L4:A2_5</td></tr>
+<tr><td colspan="2">
+<pre>KOPEERI TEISE KÄSU VÄLJUNDFAILI SISU SIIA!
+</pre>
+</td></tr>
+<tr>
+<td>Mis tüüpi WLAN võrguga on arvuti ühendatud?</td>
+<td>802.11n</td></tr>
+<tr><td>Milline on lubatud laadimiskiirus üles ja alla?</td>
+<td>300 Mbps</td>
+</tr>
+</tbody></table>
+
+
+<h3>Programmi <font face="Courier New, monospace"><i>inSSIDer 3</i></font> ekraanipilt</h3>
+
+<img src="" alt="LISA SIIA INSSIDER EKRAANIPILT!">
+<p>
+
+</p><h3>Küsimused:</h3>
+<small>1. Millised kanalid on hõivatud Teie võrkude spektrite poolt?</small><br>
+48+52
+
+<p> 
+<small>2. Kui suurt andmeedastuskiirust teoreetiliselt on võimalik kasutada Teie WLAN võrkudes?</small><br> 
+450
+
+</p><p>
+<small>3. Selgitada <font face="Courier New, monospace"><i>inSSIDer</i></font>'i tabelis näidatavate MAC aadresside tähendust.</small><br>
+AP seadmete (wifi jaamade) mac aadressid
+
+</p><p>
+<small>4. Millised raadiokanalid on kasutuses ja kus on veel vaba ruumi uute võrkude jaoks?</small><br>
+2,4 GHz on vabad kanalid 8-9. 5 GHz on kasutuses 36, 40, 48, 52, 64, 116 (vist), 140 - ülejäänud on vabad
+
+
+</p><h2>4. WLAN võrgu kiiruste uurimine</h2>
+<p>
+802.11g (2,4 GHz) võrk.
+<br>
+<img src="" alt="LISA SIIA TAMOSOFT KLIENTARVUTI EKRAANIPILT 2,4 GHz võrgust!">
+<br>
+SSID: L4:A2_2.4, kanal: 6
+<br>
+Hinnang TCP katsetulemustele:<br>
+keskmine upload 6,6, keskmine download 14,5 Mbps
+<br>
+Hinnang UDP katsetulemustele:<br>
+keskmine upload 10 Mbps, keskmine download 0 Mbps
+</p><p>
+802.11n (5 GHz) võrk. 
+<br>
+<img src="" alt="LISA SIIA TAMOSOFT KLIENTARVUTI EKRAANIPILT 5 GHz võrgust!">
+<br>
+SSID: L4:A2_5, kanal: 48 (auto)
+<br>
+Hinnang TCP katsetulemustele:<br>
+keskmine upload 42 Mbps, keskmine download 95 Mbps
+<br>
+Hinnang UDP katsetulemustele:<br>
+keskmine upload 161 Mbps, keskmine download 0 Mbps
+</p><p>
+
+Milline oli mõlema võrgu (802.11g ja 802.11n) korral maksimaalne saavutatud kiirus mõlema protokolli (TCP ja UDP) korral?</p>
+<p>KÜSIMUSE VASTUS SIIA!</p>
+
+
+
+<p>
+</p><h2>Kokkuvõte ja järeldused</h2>
+
+<p>
+KIRJUTA KOKKUVÕTE JA JÄRELDUSED SIIA!
+</p><p>
+
+</p></body></html>

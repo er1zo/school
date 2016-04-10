@@ -1,0 +1,23 @@
+
+There is 1 interface on the system: 
+
+    Name                   : Wireless Network Connection
+    Description            : ASUS USB-AC56 802.11ac Wireless USB Adapter
+    GUID                   : dd71900b-76bb-4f91-bcf0-8d907558bfca
+    Physical address       : f0:79:59:e8:ba:ef
+    State                  : connected
+    SSID                   : L4:A2_2.4
+    BSSID                  : 08:62:66:8d:05:08
+    Network type           : Infrastructure
+    Radio type             : 802.11g
+    Authentication         : WPA2-Personal
+    Cipher                 : CCMP
+    Connection mode        : Profile
+    Channel                : 6
+    Receive rate (Mbps)    : 54
+    Transmit rate (Mbps)   : 54
+    Signal                 : 100% 
+    Profile                : L4:A2_2.4 
+
+    Hosted network status  : Not available
+
